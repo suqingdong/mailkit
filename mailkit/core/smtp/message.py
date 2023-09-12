@@ -1,7 +1,6 @@
 import os
 from typing import List, Optional, Union
-from dataclasses import dataclass, field
-
+from dataclasses import dataclass
 
 from email.header import Header
 from email.mime.text import MIMEText
@@ -13,24 +12,15 @@ from email.mime.application import MIMEApplication
 class MessageField:
     """
     Fields:
-        from_addr (str): The email address of the sender.
-        to_addrs (str): Comma-separated email addresses of the primary recipients.
-        subject (str): Subject line of the email.
-        body (str): The body text of the email or path to a text file.
-        content_type (str): MIME type for the email body, default is 'plain'.
-        cc (str): Comma-separated email addresses for CC.
-        bcc (str): Comma-separated email addresses for BCC.
-        charset (str): Character set for the email, default is 'utf-8'.
-        attachments (Union[str, List[str]]): File paths to attach to the email.
     """
     from_addr: str
-    to_addrs: str
+    to_addrs: Union[str, List[str]]
     subject: str
     body: str = ''
     content_type: str = 'plain'
-    cc: str = ''
-    bcc: str = ''
     charset: str = 'utf-8'
+    cc: Union[str, List[str]] = ''
+    bcc: Union[str, List[str]] = ''
     attachments: Optional[Union[str, List[str]]] = None
 
 
