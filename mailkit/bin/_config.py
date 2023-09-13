@@ -31,11 +31,17 @@ def initialize_config(**kwargs):
     name='config',
     help='initialize the configuration file',
 )
+@click.option('-s', '--show', help='show the current configuration', is_flag=True)
 @click.pass_obj
-def main(obj):
+def main(obj, show):
     main_kwargs = obj['main_kwargs']
-    env_file = main_kwargs['_env_file']
-    if Path(env_file).expanduser().is_file():
+    env_file = Path(main_kwargs['_env_file']).expanduser()
+   
+    if env_file.is_file():
+        if show:
+            click.secho(f'>>> read env_file: {env_file}', fg='green')
+            click.echo(env_file.read_text())
+            return
         if not click.confirm(f'`{env_file}` already exists, do you want to overwrite it?'):
             return
     

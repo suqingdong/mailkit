@@ -6,7 +6,14 @@ from mailkit import version_info
 from ._send import main as send_cli
 from ._config import main as config_cli
 
+
 CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
+
+__epilog__ = click.style(
+    'Contact: {author} <{author_email}>',
+    bold=True,
+    fg='white'
+).format(**version_info)
 
 
 @click.group(
@@ -14,6 +21,7 @@ CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
     help=click.style(version_info['desc'], italic=True, fg='cyan', bold=True),
     context_settings=CONTEXT_SETTINGS,
     no_args_is_help=True,
+    epilog=__epilog__,
 )
 @click.version_option(version=version_info['version'],
                       prog_name=version_info['prog'],

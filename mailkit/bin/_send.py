@@ -45,7 +45,7 @@ def main(obj, **kwargs):
         print(e)
 
         if click.confirm('Do you want to complete a configration?'):
-            initialize_config(**main_kwargs)
+            mail = initialize_config(**main_kwargs)
             if click.confirm('Save your configration?'):
                 _env_file = main_kwargs.get('_env_file')
                 mail.save_config(env_file=_env_file)

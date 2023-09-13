@@ -30,8 +30,16 @@ Commands:
 
 ### *`mailkit config`*
 ```bash
-mailkit config
+Usage: python -m mailkit.bin.main config [OPTIONS]
 
+  initialize the configuration file
+
+Options:
+  -s, --show      show the current configuration
+  -?, -h, --help  Show this message and exit.
+
+
+mailkit config
 # flowing the instruction to complete the configuration
 "
 >>> SMTP host: smtp.exmail.qq.com
