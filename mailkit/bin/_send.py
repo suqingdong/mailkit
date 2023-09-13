@@ -44,12 +44,12 @@ def main(obj, **kwargs):
         click.secho(f'[SmtpConfigError] missing required arguments as follow:', fg='red')
         print(e)
 
-        if click.confirm('Do you want to complete a configration?'):
+        if click.confirm('Do you want to complete a configuration?'):
             mail = initialize_config(**main_kwargs)
-            if click.confirm('Save your configration?'):
+            if click.confirm('Save your configuration?'):
                 _env_file = main_kwargs.get('_env_file')
                 mail.save_config(env_file=_env_file)
-                click.secho(f'Configration saved to: {_env_file}', fg='green')
+                click.secho(f'Configuration saved to: {_env_file}', fg='green')
         else:
             exit(1)
 

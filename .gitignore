@@ -1,4 +1,8 @@
 .vscode
 .env
 __pycache__
+
 build.sh
+build
+dist
+*egg-info

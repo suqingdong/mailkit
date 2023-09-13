@@ -159,3 +159,7 @@ class SendEmail(mailkit.core.smtp.config.SmtpConfig)
  |  model_dump(self, *, mode: "Literal[('json', 'python')] | str" = 'python', include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -> 'dict[str, Any]'
 
 ```
+
+
+## Documents
+https://mailkit.readthedocs.io/

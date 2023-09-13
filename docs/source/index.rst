@@ -13,6 +13,45 @@ It empowers users to easily configure and send emails with great flexibility.
 Whether you prefer command-line convenience or seamless integration within your Python projects, Mailkit has you covered.
 
 
+Installation Guide
+==================
+.. toctree::
+   :caption: Installation
+   :hidden:
+
+   installation
+
+:doc:`installation`
+   The guide of installation
+
+
+Configuration
+=============
+.. toctree::
+   :caption: Configuration
+   :hidden:
+
+   configuration
+
+:doc:`configuration`
+   The guide of configuration
+
+
+Usage Guide
+===========
+.. toctree::
+   :caption: Usage
+   :hidden:
+
+   usage_cmd
+   usage_python
+
+:doc:`usage_cmd`
+   The guide of usage in command-line
+
+:doc:`usage_python`
+   The guide of usage in Python
+
 
 API Reference
 =============
