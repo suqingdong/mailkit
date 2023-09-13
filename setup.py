@@ -19,7 +19,9 @@ setup(
     install_requires=BASE_DIR.joinpath('requirements.txt').read_text().strip().split(),
     packages=find_packages(),
     include_package_data=True,
+    python_requires='>=3.9',
     entry_points={'console_scripts': [
+        'mailkit = mailkit.bin.main:main',
         'mailkit = mailkit.bin.main:main',
     ]},
     classifiers=[
@@ -30,6 +32,8 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 3 :: Only',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Software Development :: Libraries'
     ]
 )

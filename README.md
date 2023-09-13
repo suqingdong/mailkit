@@ -128,7 +128,23 @@ mail.close()
 # use with mode
 with SendEmail() as mail:
     mail.send('to@example.com', 'subject', 'body')
+
+
+# auth with env_file
+mail = SendEmail(_env_file='.env')
+
+
+# auth wiht environtment variables
+import os
+os.environ['SMTP_HOST'] = 'smtp.gmail.com'
+os.environ['SMTP_PORT'] = 465
+os.environ['SMTP_USERNAME'] = 'username@gmail.com'
+os.environ['SMTP_PASSWORD'] = 'password'
+os.environ['SMTP_USE_SSL'] = True
+os.environ['SMTP_TIMEOUT'] = 10
+mail = SendEmail()
 ```
+
 ### `mailkit.core.SendEmail`
 ```python
 class SendEmail(mailkit.core.smtp.config.SmtpConfig)
