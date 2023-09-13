@@ -19,8 +19,7 @@ Options:
   -p, --password TEXT    SMTP server password
   -s, --use-ssl BOOLEAN  Use SSL connection  [default: True]
   -t, --timeout INTEGER  SMTP server timeout  [default: 10]
-  -e, --env-file TEXT    The environment file to load  [default:
-                         ~/.mailkit.env]
+  -e, --env-file TEXT    The environment file to load  [default: ~/.mailkit.env]
   -h, -?, --help         Show this message and exit.
 
 Commands:
@@ -33,6 +32,7 @@ Commands:
 ```bash
 mailkit config
 
+# flowing the instruction to complete the configuration
 "
 >>> SMTP host: smtp.exmail.qq.com
 >>> SMTP port [465]: 
@@ -43,6 +43,14 @@ mailkit config
 login success.
 Saved configuration to ~/.mailkit.env
 "
+
+# you can also use envernment variables
+export SMTP_HOST=smtp.gmail.com
+export SMTP_PORT=465
+export SMTP_USERNAME=suqingdong@gmail.com
+export SMTP_PASSWORD=YOUR_PASSWORD
+export SMTP_USE_SSL=True
+export SMTP_TIMEOUT=10
 ```
 
 ### *`mailkit send`*
@@ -52,8 +60,7 @@ Usage: python -m mailkit.bin.main send [OPTIONS]
   send email to user(s)
 
 Options:
-  -f, --from-addr TEXT     the display address of the sender, default is the
-                           login username
+  -f, --from-addr TEXT     the display address of the sender, default is the login username
   -t, --to-addrs TEXT      the recipient address(es)  [required]
   -s, --subject TEXT       the subject of the email  [required]
   -b, --body TEXT          the body of the email
@@ -106,6 +113,13 @@ mail.send('to@example.com', 'subject', '<h1>body</h1>', content_type='html')
 
 # use attachments
 mail.send('to@example.com', 'subject', 'body', attachments=['attachment.txt'])
+
+# close the connection
+mail.close()
+
+# use with mode
+with SendEmail() as mail:
+    mail.send('to@example.com', 'subject', 'body')
 ```
 ### `mailkit.core.SendEmail`
 ```python
@@ -119,7 +133,5 @@ class SendEmail(mailkit.core.smtp.config.SmtpConfig)
  |  login(self)
  |  
  |  model_dump(self, *, mode: "Literal[('json', 'python')] | str" = 'python', include: 'IncEx' = None, exclude: 'IncEx' = None, by_alias: 'bool' = False, exclude_unset: 'bool' = False, exclude_defaults: 'bool' = False, exclude_none: 'bool' = False, round_trip: 'bool' = False, warnings: 'bool' = True) -> 'dict[str, Any]'
-
-
 
 ```
