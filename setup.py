@@ -22,7 +22,6 @@ setup(
     python_requires='>=3.9',
     entry_points={'console_scripts': [
         'mailkit = mailkit.bin.main:main',
-        'mailkit = mailkit.bin.main:main',
     ]},
     classifiers=[
         'Development Status :: 5 - Production/Stable',
