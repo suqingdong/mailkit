@@ -100,7 +100,7 @@ mailkit -e .env send -t "to@example.com" -s "subject" -b "body"
 ```
 
 ## Usage in Python
-```
+```python
 from mailkit.core import SendEmail
 
 mail = SendEmail()

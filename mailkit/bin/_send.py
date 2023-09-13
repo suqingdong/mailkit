@@ -62,3 +62,4 @@ def main(obj, **kwargs):
         exit(2)
 
     mail.send(**kwargs)
+    mail.close()

@@ -43,5 +43,6 @@ def main(obj):
         
         mail.save_config(env_file=env_file)
         click.secho(f'Saved configuration to {env_file}', fg='green')
+        mail.close()
     else:
         click.secho('>>> Error: SMTP login failed', fg='red')
