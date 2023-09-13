@@ -4,6 +4,8 @@ from pydantic import ValidationError
 from mailkit.core.smtp import SendEmail
 from mailkit.error import LoginError
 
+from ._config import initialize_config
+
 
 __epilog__ = click.style('''                
 \n\b
@@ -19,7 +21,7 @@ examples:
 
 @click.command(
     name='send',
-    help=click.style('send email to user(s)', fg='green', bold=True),
+    help='send email to user(s)',
     no_args_is_help=True,
     epilog=__epilog__,
 )
@@ -43,14 +45,7 @@ def main(obj, **kwargs):
         print(e)
 
         if click.confirm('Do you want to complete a configration?'):
-            ssl = main_kwargs.get('use_ssl')
-            host = click.prompt('>>> SMTP host', default=main_kwargs.get('host'))
-            port = click.prompt('>>> SMTP port', default=main_kwargs.get('port'))
-            username = click.prompt('>>> SMTP username', default=main_kwargs.get('username'))
-            password = click.prompt('>>> SMTP password', default=main_kwargs.get('password'), hide_input=True)
-            use_ssl = click.prompt('>>> SMTP use ssl', default=main_kwargs.get('use_ssl'), type=bool)
-            timeout = click.prompt('>>> SMTP timeout', default=main_kwargs.get('timeout'), type=int)
-            mail = SendEmail(host=host, port=port, username=username, password=password, use_ssl=use_ssl, timeout=timeout)
+            initialize_config(**main_kwargs)
             if click.confirm('Save your configration?'):
                 _env_file = main_kwargs.get('_env_file')
                 mail.save_config(env_file=_env_file)

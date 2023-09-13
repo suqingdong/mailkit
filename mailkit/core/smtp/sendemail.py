@@ -20,13 +20,6 @@ def wrap_message_signature(func):
 
 class SendEmail(SmtpConfig):
     _smtp = None
-    # def __init__(self, host, username, password, port=None, use_ssl=True, timeout=10):
-    #     self.host = host
-    #     self.port = port or smtplib.SMTP_SSL_PORT if use_ssl else smtplib.SMTP_PORT
-    #     self.username = username
-    #     self.password = password
-    #     self.use_ssl = use_ssl
-    #     self.timeout = timeout
 
     def __enter__(self):
         return self
@@ -63,13 +56,3 @@ class SendEmail(SmtpConfig):
             click.secho('email has send to: {to_addrs}'.format(**kwargs), fg='green', err=True)
         except Exception as e:
             raise SendMailError(f'send email failed as: {e}')
-
-
-if __name__ == '__main__':
-    from mailkit.config import SMTP_Config
-
-    settings = SMTP_Config(env_file='.env')
-    print(settings.model_dump())
-    sender = SendEmail(**settings.model_dump())
-    sender.send(to_addrs='suqingdong@novogene.com', subject='测试plain', body='测试')
-    sender.send(to_addrs='suqingdong@novogene.com', subject='测试html', body='<h1>你好!</h1>', content_type='html')

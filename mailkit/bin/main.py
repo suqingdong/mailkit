@@ -3,9 +3,8 @@ from pathlib import Path
 import click
 
 from mailkit import version_info
-from mailkit.core import SendEmail
 from ._send import main as send_cli
-
+from ._config import main as config_cli
 
 CONTEXT_SETTINGS = dict(help_option_names=['-?', '-h', '--help'])
 
@@ -37,6 +36,7 @@ def cli(ctx, **kwargs):
 
 def main():
     cli.add_command(send_cli)
+    cli.add_command(config_cli)
     cli()
 
 
