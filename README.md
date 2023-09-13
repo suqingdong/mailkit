@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/mailkit/badge/?version=latest)](https://mailkit.readthedocs.io/en/latest/?badge=latest)
+
 # A user-friendly Python email toolkit
 
 ## Installation
