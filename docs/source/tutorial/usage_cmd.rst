@@ -1,10 +1,9 @@
-============
 Usage on CMD
-============
+=============
 
 .. code-block:: bash
 
-    Usage: python -m mailkit.bin.main [OPTIONS] COMMAND [ARGS]...
+    Usage: mailkt [OPTIONS] COMMAND [ARGS]...
 
     A user-friendly Python email toolkit
 
@@ -24,12 +23,12 @@ Usage on CMD
       send    send email to user(s)
 
 
-`mailkit` send Command
-======================
+`mailkit send`
+---------------
 
 .. code-block:: bash
 
-    Usage: python -m mailkit.bin.main send [OPTIONS]
+    Usage: mailkt send [OPTIONS]
 
         send email to user(s)
 
@@ -45,7 +44,9 @@ Usage on CMD
     -bcc, --bcc TEXT         the bcc address(es)
     -h, -?, --help           Show this message and exit.
 
-    Examples:
+Examples:
+
+.. code-block:: bash
 
     # Basic usage
     mailkit send -t "to@example.com" -s "subject" -b "body"

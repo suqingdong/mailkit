@@ -1,4 +1,3 @@
-===============
 Usage in Python
 ===============
 
@@ -22,7 +21,7 @@ Usage in Python
 
     # Use with mode
     with SendEmail() as mail:
-    mail.send('to@example.com', 'subject', 'body')
+        mail.send('to@example.com', 'subject', 'body')
 
     # Auth with env_file
     mail = SendEmail(_env_file='.env')

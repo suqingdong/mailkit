@@ -1,16 +1,22 @@
-============
+==============
 Configuration
-============
+==============
 
 .. code-block:: bash
 
-    Usage: python -m mailkit.bin.main config [OPTIONS]
+    Usage: mailkit config [OPTIONS]
 
     initialize the configuration file
 
     Options:
     -s, --show      show the current configuration
     -?, -h, --help  Show this message and exit.
+
+
+`mailkit config`
+================
+
+.. code-block:: bash
 
     mailkit config
     # Follow the instructions to complete the configuration
@@ -25,7 +31,12 @@ Configuration
     Saved configuration to ~/.mailkit.env
     "
 
-    # You can also use environment variables
+
+use environment variables
+=========================
+
+.. code-block:: bash
+
     export SMTP_HOST=smtp.gmail.com
     export SMTP_PORT=465
     export SMTP_USERNAME=suqingdong@gmail.com

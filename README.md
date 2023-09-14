@@ -9,7 +9,7 @@ python3 -m pip install mailkit
 
 ## Usage on CMD
 ```bash
-Usage: python -m mailkit.bin.main [OPTIONS] COMMAND [ARGS]...
+Usage: mailkit [OPTIONS] COMMAND [ARGS]...
 
   A user-friendly Python email toolkit
 
@@ -27,12 +27,11 @@ Options:
 Commands:
   config  initialize the configuration file
   send    send email to user(s)
-
 ```
 
 ### *`mailkit config`*
 ```bash
-Usage: python -m mailkit.bin.main config [OPTIONS]
+Usage: mailkit config [OPTIONS]
 
   initialize the configuration file
 
@@ -65,7 +64,7 @@ export SMTP_TIMEOUT=10
 
 ### *`mailkit send`*
 ```bash
-Usage: python -m mailkit.bin.main send [OPTIONS]
+Usage: mailkit send [OPTIONS]
 
   send email to user(s)
 

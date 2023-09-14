@@ -3,54 +3,24 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
 Welcome to mailkit's documentation!
 ===================================
-====================================
-MailKit |version| Documentation
-====================================
+
 `Mailkit` is a versatile Python email toolkit developed on top of the smtplib package.
 It empowers users to easily configure and send emails with great flexibility.
 Whether you prefer command-line convenience or seamless integration within your Python projects, Mailkit has you covered.
 
 
-Installation Guide
-==================
+Contents
+========
 .. toctree::
-   :caption: Installation
-   :hidden:
+   :maxdepth: 2
 
-   installation
-
-:doc:`installation`
-   The guide of installation
-
-
-Configuration
-=============
-.. toctree::
-   :caption: Configuration
-   :hidden:
-
-   configuration
-
-:doc:`configuration`
-   The guide of configuration
-
-
-Usage Guide
-===========
-.. toctree::
-   :caption: Usage
-   :hidden:
-
-   usage_cmd
-   usage_python
-
-:doc:`usage_cmd`
-   The guide of usage in command-line
-
-:doc:`usage_python`
-   The guide of usage in Python
+   tutorial/installation
+   tutorial/configuration
+   tutorial/usage_cmd
+   tutorial/usage_python
 
 
 API Reference
