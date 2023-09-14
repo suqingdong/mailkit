@@ -15,8 +15,9 @@ Whether you prefer command-line convenience or seamless integration within your 
 Contents
 ========
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
+   tutorial/quickstart
    tutorial/installation
    tutorial/configuration
    tutorial/usage_cmd

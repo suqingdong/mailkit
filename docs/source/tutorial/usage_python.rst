@@ -5,6 +5,7 @@ Usage in Python
 
     from mailkit.core import SendEmail
 
+    # Default auth with ~/.mailkit.env
     mail = SendEmail()
 
     # Basic usage
@@ -23,8 +24,13 @@ Usage in Python
     with SendEmail() as mail:
         mail.send('to@example.com', 'subject', 'body')
 
-    # Auth with env_file
+.. code-block:: python
+
+    # Auth with another env_file
     mail = SendEmail(_env_file='.env')
+
+    # Auth with parameters
+    mail = SendEmail(host='smtp.gmail.com', port=465, username='username@gmail.com', password='password')
 
     # Auth with environment variables
     import os
@@ -35,6 +41,3 @@ Usage in Python
     os.environ['SMTP_USE_SSL'] = True
     os.environ['SMTP_TIMEOUT'] = 10
     mail = SendEmail()
-
-
-    

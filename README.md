@@ -1,13 +1,17 @@
 [![Documentation Status](https://readthedocs.org/projects/mailkit/badge/?version=latest)](https://mailkit.readthedocs.io/en/latest/?badge=latest)
 
+
+
 # A user-friendly Python email toolkit
 
 ## Installation
+
 ```bash
 python3 -m pip install mailkit
 ```
 
 ## Usage on CMD
+
 ```bash
 Usage: mailkit [OPTIONS] COMMAND [ARGS]...
 
@@ -30,6 +34,7 @@ Commands:
 ```
 
 ### *`mailkit config`*
+
 ```bash
 Usage: mailkit config [OPTIONS]
 
@@ -63,6 +68,7 @@ export SMTP_TIMEOUT=10
 ```
 
 ### *`mailkit send`*
+
 ```bash
 Usage: mailkit send [OPTIONS]
 
@@ -109,10 +115,12 @@ mailkit -e .env send -t "to@example.com" -s "subject" -b "body"
 ```
 
 ## Usage in Python
+
 ```python
 from mailkit.core import SendEmail
 
-mail = SendEmail()
+# default auth with ~/.mailkit.env
+mail = SendEmail() 
 
 # basic usage
 mail.send('to@example.com', 'subject', 'body')
@@ -131,8 +139,12 @@ with SendEmail() as mail:
     mail.send('to@example.com', 'subject', 'body')
 
 
-# auth with env_file
+# auth with another env_file
 mail = SendEmail(_env_file='.env')
+
+
+# auth with parameters
+mail = SendEmail(host='smtp.gmail.com', port=465, username='username@gmail.com', password='password')
 
 
 # auth wiht environtment variables
@@ -147,6 +159,7 @@ mail = SendEmail()
 ```
 
 ### `mailkit.core.SendEmail`
+
 ```python
 class SendEmail(mailkit.core.smtp.config.SmtpConfig)
  |  SendEmail(_case_sensitive: 'bool | None' = None,_env_prefix: 'str | None' = None, _env_file: 'DotenvType | None' = PosixPath('.'), _env_file_encoding: 'str | None' = None, _env_nested_delimiter: 'str | None' = None, _secrets_dir: 'str | Path | None' = None, *, host: str, port: Union[int, NoneType] = None, username: str, password: str, use_ssl: bool = True, use_tls: bool = False, timeout: int = 10) -> None
@@ -163,4 +176,5 @@ class SendEmail(mailkit.core.smtp.config.SmtpConfig)
 
 
 ## Documents
+
 https://mailkit.readthedocs.io/
