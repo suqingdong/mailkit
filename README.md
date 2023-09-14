@@ -1,5 +1,13 @@
-[![Documentation Status](https://readthedocs.org/projects/mailkit/badge/?version=latest)](https://mailkit.readthedocs.io/en/latest/?badge=latest)
+![Read the Docs (version)](https://img.shields.io/readthedocs/mailkit/latest)
 
+![PyPI - License](https://img.shields.io/pypi/l/mailkit)
+![PyPI - Status](https://img.shields.io/pypi/status/mailkit)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mailkit)
+![PyPI - Version](https://img.shields.io/pypi/v/mailkit)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/suqingdong/mailkit)
+![GitHub top language](https://img.shields.io/github/languages/top/suqingdong/mailkit)
+![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/suqingdong/mailkit)
 
 
 # A user-friendly Python email toolkit
